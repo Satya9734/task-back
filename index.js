@@ -41,7 +41,7 @@ app.get("/data",async(req,res)=>{
     const data=model.find({});
     res.json(data)
    }catch(err){
-    res.send("not bro ")
+    res.send(err)
    }
     
 })
