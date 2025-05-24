@@ -1,4 +1,4 @@
-import exp from "express";
+import express from "express";
 import dotenv from "dotenv";
 import db from "./db/conect.js";
 import model from "./db/schema.js"
@@ -9,7 +9,7 @@ import router from "./router/authRouter.js";
 import cookie_parser from "cookie-parser"
 import dashRouters from "./router/dashRouts.js";
 //create app
-const app=exp();
+const app=express();
 dotenv.config()
 
 
@@ -20,11 +20,10 @@ db();
 //middleware
 app.use(bodyParser.json())
 app.use(cors({
-    // origin:"https://tasks-management-eight-xi.vercel.app",
-    origin:"*",
-    credentials:true
-}))
-app.use(exp.json());
+    origin: "https://tasks-management-eight-xi.vercel.app", 
+    credentials: true
+  }));
+app.use(express.json());
 app.use(cookie_parser())
 
 //router middleware
