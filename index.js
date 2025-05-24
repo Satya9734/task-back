@@ -42,7 +42,7 @@ app.get("/data",async(req,res)=>{
     const data=model.find({});
     res.json({data:data})
    }catch(err){
-    res.send(err)
+    res.send("error")
    }
     
 })
