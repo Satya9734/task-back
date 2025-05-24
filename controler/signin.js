@@ -22,12 +22,19 @@ const signin=async(req,res)=>{
     password:hash
    });
    const token=jwt.sign(email,process.env.SECRET);
-res.cookie("token", token, {
+   
+   res.setHeader("Access-Control-Allow-Origin", "https://tasks-management-eight-xi.vercel.app");
+   res.setHeader("Access-Control-Allow-Credentials", "true");
+
+
+   res.cookie("token", token, {
     httpOnly: true,
-    secure: false,
-    sameSite: "Lax",
-    maxAge: 86400000
+    secure: true,          
+    sameSite: "None",      
+    maxAge: 86400000       
   });
+
+
    res.status(201).json({message:"you are successfully signin",success:true,name:name});
 
 }catch(err){
