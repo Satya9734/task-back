@@ -20,7 +20,7 @@ db();
 //middleware
 app.use(bodyParser.json())
 app.use(cors({
-    origin:" http://localhost:5173",
+    origin:"https://tasks-management-eight-xi.vercel.app",
     credentials:true
 }))
 app.use(exp.json());
