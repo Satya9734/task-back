@@ -39,7 +39,7 @@ app.get("/",(req,res)=>{
 app.get("/data",async(req,res)=>{
     console.log("request is coming")
    try{
-    const data=model.find({});
+    const data=await model.find({});
     res.json({data:data})
    }catch(err){
     res.send("error")
