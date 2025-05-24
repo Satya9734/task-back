@@ -37,6 +37,7 @@ app.get("/",(req,res)=>{
     
 })
 app.get("/data",async(req,res)=>{
+    console.log("request is coming")
    try{
     const data=model.find({});
     res.json({data:data})
