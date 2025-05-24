@@ -36,6 +36,15 @@ app.get("/",(req,res)=>{
     res.send("welcome to my web page");
     
 })
+app.get("/data",async(req,res)=>{
+   try{
+    const data=model.find({});
+    res.json(data)
+   }catch(err){
+    res.send("not bro ")
+   }
+    
+})
 
 
 app.listen(port,()=>{
