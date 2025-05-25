@@ -12,7 +12,7 @@ const insert=await TaskModel.create({
     task:task,
     id:id
 });
-const alldata=await TaskModel.find({});
+const alldata=await TaskModel.find({email:email});
 res.status(201).json({data:alldata,success:true});
 }
 catch(err){
