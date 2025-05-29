@@ -8,6 +8,7 @@ import cors from "cors"
 import router from "./router/authRouter.js";
 import cookie_parser from "cookie-parser"
 import dashRouters from "./router/dashRouts.js";
+import noteRouter from "./router/noteRouts.js";
 //create app
 const app=express();
 dotenv.config()
