@@ -29,6 +29,7 @@ app.use(cookie_parser())
 //router middleware
 app.use("/user",router)
 app.use("/dashbord",dashRouters);
+app.use("/note",noteRouter);
 
 
 //routers

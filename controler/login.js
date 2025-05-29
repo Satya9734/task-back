@@ -8,11 +8,9 @@ env.config()
 const login=async(req,res)=>{
     const {email,password}=req.body;
     const isExist=await model.findOne({email:email});
-    console.log(isExist)
-    if(isExist.length==0){
-        res.status(403).json({message:"email or password is wrong",success:false});
-    }
-
+    if(isExist==null){
+        return res.status(403).json({message:"user doesnot exist, signin first",success:false});
+     }
     const checkPass=await bcrypt.compare(password,isExist.password);
     if(checkPass){
         let token=await jwt.sign(email,process.env.SECRET)
